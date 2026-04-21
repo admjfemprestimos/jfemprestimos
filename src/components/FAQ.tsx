@@ -51,7 +51,7 @@ function FAQItem({ question, answer, i }: FAQItemProps) {
         />
       </button>
       <div 
-        className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+        className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
       >
         <div className="overflow-hidden">
           <p className="pb-8 text-brand-muted leading-relaxed pl-9 pr-4">
