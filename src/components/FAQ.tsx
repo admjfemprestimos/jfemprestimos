@@ -42,12 +42,12 @@ function FAQItem({ question, answer, i }: FAQItemProps) {
         className="w-full py-6 flex items-center justify-between text-left gap-4 hover:text-brand-primary transition-colors group"
       >
         <div className="flex items-center gap-4">
-          <HelpCircle className="text-brand-primary/40 group-hover:text-brand-primary transition-colors" size={20} />
+          <HelpCircle className="shrink-0 text-brand-primary/40 group-hover:text-brand-primary transition-colors" size={24} />
           <span className="font-bold text-lg text-brand-deep leading-tight">{question}</span>
         </div>
         <ChevronDown 
           className={`shrink-0 transition-transform duration-300 text-brand-muted ${isOpen ? 'rotate-180 text-brand-primary' : ''}`} 
-          size={20} 
+          size={24} 
         />
       </button>
       <div 
