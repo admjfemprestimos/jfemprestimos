@@ -71,7 +71,7 @@ export default function Hours() {
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen={true}
-                loading="lazy"
+                loading="eager"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Google Maps - JF Empréstimos"
               ></iframe>
