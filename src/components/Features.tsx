@@ -83,11 +83,11 @@ export default function Features() {
           {products.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4 }}
-              className="bg-white p-8 rounded-2xl shadow-sm border border-brand-100 md:hover:-translate-y-1.5 md:hover:shadow-xl transition-all duration-300 group transform-gpu"
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-white p-8 rounded-2xl shadow-sm border border-brand-100 transition-all duration-300 group transform-gpu"
             >
               <div className={`w-12 h-12 ${item.color} text-white rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
                 {item.icon}
