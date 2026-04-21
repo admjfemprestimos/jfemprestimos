@@ -35,8 +35,7 @@ function FAQItem({ question, answer, i }: FAQItemProps) {
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.4 }}
-      className="border-b border-brand-100 last:border-0 transform-gpu"
+      className="border-b border-brand-100 last:border-0"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -82,7 +81,7 @@ export default function FAQ() {
           </p>
         </div>
 
-        <div className="bg-white rounded-[2rem] shadow-xl shadow-brand-200/50 p-6 md:p-12 border border-brand-100 transform-gpu will-change-transform">
+        <div className="bg-white rounded-[2rem] shadow-xl shadow-brand-200/50 p-6 md:p-12 border border-brand-100">
           {faqItems.map((item, index) => (
             <div key={index}>
               <FAQItem question={item.question} answer={item.answer} i={index} />
