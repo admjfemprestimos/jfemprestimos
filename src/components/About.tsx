@@ -27,8 +27,9 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="transform-gpu will-change-transform"
           >
             <span className="text-brand-primary font-bold uppercase tracking-wider text-sm mb-4 block">Sobre a JF Empréstimos</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-brand-deep mb-8 leading-tight">
@@ -64,9 +65,9 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative transform-gpu will-change-transform"
           >
             <div className="grid grid-cols-2 gap-4">
               <img

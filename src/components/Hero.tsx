@@ -7,8 +7,8 @@ export default function Hero() {
       {/* Background with Gradient and Decorative Elements */}
       <div className="absolute inset-0 z-0 bg-brand-deep">
         {/* Modern Radial Gradient Glows */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-primary/20 rounded-full blur-[120px] -mr-80 -mt-80 animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-900/40 rounded-full blur-[100px] -ml-40 -mb-40"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-primary/20 rounded-full blur-[120px] -mr-80 -mt-80 animate-pulse pointer-events-none transform-gpu will-change-transform"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-900/40 rounded-full blur-[100px] -ml-40 -mb-40 pointer-events-none transform-gpu will-change-transform"></div>
         
         {/* Mesh Gradient Effect */}
         <div className="absolute inset-0 bg-gradient-to-br from-brand-deep via-[#0d1b33] to-[#122445]"></div>
@@ -19,9 +19,10 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -30 }} // Reduced horizontal distance
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="transform-gpu will-change-transform" // Hardware acceleration
         >
           <div className="inline-flex items-center gap-2 bg-brand-primary/20 backdrop-blur-sm border border-brand-primary/30 px-4 py-2 rounded-full text-brand-100 text-sm font-medium mb-6">
             <CheckCircle2 size={16} className="text-brand-primary" />
@@ -69,10 +70,10 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 30 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative px-0 md:px-4"
+          initial={{ opacity: 0, y: 30 }} // Removed scale, easier to hardware accelerate over backdrop-blur
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          className="relative px-0 md:px-4 transform-gpu will-change-transform"
         >
           <div className="bg-white/95 backdrop-blur-xl p-8 md:p-10 rounded-[2.5rem] shadow-2xl border border-white/20 relative z-10 overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
@@ -130,13 +131,13 @@ export default function Hero() {
           </div>
 
           {/* Decorative accents */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-brand-primary/5 -z-20 blur-3xl rounded-full"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-brand-primary/5 -z-20 blur-3xl rounded-full pointer-events-none transform-gpu"></div>
         </motion.div>
 
       </div>
 
       {/* Shapes Overlay */}
-      <div className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-brand-primary/10 blur-[120px] rounded-full -mr-20 -mb-20"></div>
+      <div className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-brand-primary/10 blur-[120px] rounded-full -mr-20 -mb-20 pointer-events-none transform-gpu"></div>
     </section>
   );
 }
