@@ -53,8 +53,8 @@ export default function StatsStrip() {
   return (
     <section className="bg-brand-deep py-12 relative overflow-hidden">
       {/* Decorative Background Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 rounded-full blur-[120px] -mr-48 -mt-48"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 rounded-full blur-[120px] -ml-48 -mb-48"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 rounded-full blur-[120px] -mr-48 -mt-48 pointer-events-none transform-gpu will-change-transform"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 rounded-full blur-[120px] -ml-48 -mb-48 pointer-events-none transform-gpu will-change-transform"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
@@ -63,9 +63,9 @@ export default function StatsStrip() {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              className="flex flex-col items-center group"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4 }}
+              className="flex flex-col items-center group transform-gpu"
             >
               <div className="mb-4 p-3 bg-white/5 rounded-2xl text-brand-primary group-hover:scale-110 transition-transform duration-500 border border-white/10">
                 {stat.icon}

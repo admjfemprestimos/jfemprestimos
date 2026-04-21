@@ -34,9 +34,9 @@ function FAQItem({ question, answer, i }: FAQItemProps) {
     <motion.div 
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: i * 0.1 }}
-      className="border-b border-brand-100 last:border-0"
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.4 }}
+      className="border-b border-brand-100 last:border-0 transform-gpu"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -58,7 +58,7 @@ function FAQItem({ question, answer, i }: FAQItemProps) {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="overflow-hidden"
+            className="overflow-hidden transform-gpu"
           >
             <p className="pb-8 text-brand-muted leading-relaxed pl-9 pr-4">
               {answer}
@@ -88,7 +88,7 @@ export default function FAQ() {
           </p>
         </div>
 
-        <div className="bg-white rounded-[2rem] shadow-xl shadow-brand-200/50 p-6 md:p-12 border border-brand-100">
+        <div className="bg-white rounded-[2rem] shadow-xl shadow-brand-200/50 p-6 md:p-12 border border-brand-100 transform-gpu will-change-transform">
           {faqItems.map((item, index) => (
             <div key={index}>
               <FAQItem question={item.question} answer={item.answer} i={index} />
