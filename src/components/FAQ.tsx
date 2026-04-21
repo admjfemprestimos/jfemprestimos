@@ -51,13 +51,11 @@ function FAQItem({ question, answer, i }: FAQItemProps) {
         />
       </button>
       <div 
-        className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
+        className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}
       >
-        <div className="overflow-hidden">
-          <p className="pb-8 text-brand-muted leading-relaxed pl-9 pr-4">
-            {answer}
-          </p>
-        </div>
+        <p className="pb-8 text-brand-muted leading-relaxed pl-9 pr-4">
+          {answer}
+        </p>
       </div>
     </motion.div>
   );
@@ -81,7 +79,8 @@ export default function FAQ() {
           </p>
         </div>
 
-        <div className="bg-white rounded-[2rem] shadow-xl shadow-brand-200/50 p-6 md:p-12 border border-brand-100">
+        {/* Reduce complex shadow on mobile to prevent rendering lag during height changes */}
+        <div className="bg-white rounded-[2rem] shadow-sm md:shadow-xl md:shadow-brand-200/50 p-6 md:p-12 border border-brand-100">
           {faqItems.map((item, index) => (
             <div key={index}>
               <FAQItem question={item.question} answer={item.answer} i={index} />
