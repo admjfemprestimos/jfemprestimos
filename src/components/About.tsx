@@ -1,24 +1,7 @@
 import { motion } from 'motion/react';
-import { ShieldCheck, Target, Users } from 'lucide-react';
 
 export default function About() {
-  const values = [
-    {
-      icon: <ShieldCheck className="w-8 h-8 text-brand-primary" />,
-      title: "Segurança",
-      description: "Operamos com total transparência e seguindo as normas do Banco Central do Brasil."
-    },
-    {
-      icon: <Target className="w-8 h-8 text-brand-primary" />,
-      title: "Agilidade",
-      description: "Processos simplificados para que você tenha acesso ao crédito no menor tempo possível."
-    },
-    {
-      icon: <Users className="w-8 h-8 text-brand-primary" />,
-      title: "Humanização",
-      description: "Cada cliente é único. Avaliamos suas necessidades de forma próxima e pessoal."
-    }
-  ];
+  // Values section removed per user request
 
   return (
     <section id="sobre" className="py-24 bg-white overflow-hidden">
@@ -47,18 +30,6 @@ export default function About() {
               <p>
                 Contamos com um time altamente treinado para melhor atendê-los, presencialmente ou de forma digital!
               </p>
-            </div>
-
-            <div className="grid sm:grid-cols-3 gap-8">
-              {values.map((item, index) => (
-                <div key={index} className="flex flex-col gap-3">
-                  <div className="p-3 bg-brand-50 rounded-xl w-fit">
-                    {item.icon}
-                  </div>
-                  <h3 className="font-bold text-brand-deep">{item.title}</h3>
-                  <p className="text-sm text-brand-muted leading-relaxed">{item.description}</p>
-                </div>
-              ))}
             </div>
           </motion.div>
 
