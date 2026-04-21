@@ -87,8 +87,7 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4 }}
-              whileHover={{ y: -5 }}
-              className="bg-white p-8 rounded-2xl shadow-sm border border-brand-100 hover:shadow-xl transition-all group transform-gpu"
+              className="bg-white p-8 rounded-2xl shadow-sm border border-brand-100 md:hover:-translate-y-1.5 md:hover:shadow-xl transition-all duration-300 group transform-gpu"
             >
               <div className={`w-12 h-12 ${item.color} text-white rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
                 {item.icon}
