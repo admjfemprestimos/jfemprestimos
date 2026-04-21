@@ -51,21 +51,15 @@ function FAQItem({ question, answer, i }: FAQItemProps) {
           size={20} 
         />
       </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="overflow-hidden transform-gpu"
-          >
-            <p className="pb-8 text-brand-muted leading-relaxed pl-9 pr-4">
-              {answer}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div 
+        className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+      >
+        <div className="overflow-hidden">
+          <p className="pb-8 text-brand-muted leading-relaxed pl-9 pr-4">
+            {answer}
+          </p>
+        </div>
+      </div>
     </motion.div>
   );
 }
