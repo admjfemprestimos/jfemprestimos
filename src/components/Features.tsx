@@ -81,12 +81,8 @@ export default function Features() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((item, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
               className="bg-white p-8 rounded-2xl shadow-sm border border-brand-100 transition-all duration-300 group transform-gpu"
             >
               <div className={`w-12 h-12 ${item.color} text-white rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
@@ -105,15 +101,11 @@ export default function Features() {
                 Simular Agora
                 <ArrowRight size={16} />
               </a>
-            </motion.div>
+            </div>
           ))}
           
           {/* Custom CTA Card */}
-          <motion.div
-             initial={{ opacity: 0, scale: 0.95 }}
-             whileInView={{ opacity: 1, scale: 1 }}
-             viewport={{ once: true, margin: "-50px" }}
-             transition={{ duration: 0.4 }}
+          <div
              className="bg-brand-deep p-8 rounded-2xl shadow-xl flex flex-col justify-center items-center text-center text-white transform-gpu"
           >
             <h3 className="text-2xl font-bold mb-4">Dúvidas sobre qual escolher?</h3>
@@ -128,7 +120,7 @@ export default function Features() {
             >
               Falar com Consultor
             </a>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
