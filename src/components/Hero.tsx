@@ -30,8 +30,8 @@ export default function Hero() {
           </div>
           
           <h1 className="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
-            Soluções <br />
-            <span className="text-brand-primary">Empresariais</span>
+            Soluções Financeiras <br />
+            <span className="text-brand-primary">Rápidas e Seguras</span>
           </h1>
           
           <p className="text-lg text-brand-100 mb-10 max-w-2xl leading-relaxed">
